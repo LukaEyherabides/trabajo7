@@ -1,0 +1,622 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #E0E0E0;
+    background: #2C2C2C;
+    margin: 0;
+    padding: 0;
+}
+
+/* SEPARACION HEADER */
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #E0E0E0;
+    margin: 30px 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1C1C1C;
+}
+
+.page-title {
+    font-size: 3.5em;
+    color: #E0E0E0;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    border-bottom: 3px solid #0056A0;
+    padding-bottom: 5px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 800px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: -50px;
+}
+
+.search-label {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #C0C0C0;
+    text-align: left;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #C0C0C0;
+    border-radius: 25px;
+    background-color: #333;
+    color: #E0E0E0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar input::placeholder {
+    color: #C0C0C0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.main-nav ul li {
+    margin: 0 5px;
+}
+
+.main-nav ul li a {
+    color: #E0E0E0;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0056A0;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.main-nav ul li a:hover {
+    background-color: #004494;
+}
+
+.register-btn {
+    background-color: #0056A0;
+    color: #E0E0E0;
+    padding: 10px 25px;
+    border: 2px solid #C0C0C0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    margin-left: 10px;
+}
+
+.register-btn:hover {
+    background-color: #004494;
+    color: #E0E0E0;
+    border-color: #E0E0E0;
+}
+
+.login-btn {
+    padding: 10px 25px;
+    background-color: #0056A0;
+    color: #E0E0E0;
+    border: 2px solid #C0C0C0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.login-btn:hover {
+    background-color: #004494;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+}
+
+.toggle-checkbox:checked ~ .modal {
+    display: block;
+}
+
+.modal-content {
+    background-color: #E0E0E0;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #C0C0C0;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: #1C1C1C;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register-form {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+}
+
+.register-form h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #1C1C1C;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #1C1C1C;
+    font-weight: bold;
+}
+
+.register-form input,
+.register-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #888;
+    font-size: 1.1em;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056A0;
+    color: #E0E0E0;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #004494;
+}
+/* ACA TERMINA EL HEADER */
+
+/* SEPARACION MAIN */
+
+/* IPHONE */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 60px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-item img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1.2s ease;
+}
+
+.grid-item img:hover {
+    transform: scale(1.3);
+}
+
+/* MAC */
+
+.grid-container-mac {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.grid-mac img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1.2s ease;
+}
+.grid-mac img:hover {
+    transform: scale(1.3);
+}
+.mac-section {
+    background-color: #1C1C1C; 
+    padding: 50px 5%; 
+    color: #E0E0E0;
+    border-radius: 5px;
+}
+
+.mac-specs {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2C2C2C; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mac-specs h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #F0F0F0;
+}
+
+.mac-specs p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #E0E0E0;
+}
+strong {
+    color: #004494;
+}
+
+/* APPLE WATCH */
+
+.grid-container-watch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.grid-watch img {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1.2s ease;
+}
+.grid-watch img:hover {
+    transform: scale(1.3);
+}
+.watch-section {
+    background-color: #1C1C1C; 
+    padding: 50px 5%; 
+    color: #E0E0E0;
+    border-radius: 5px;
+}
+
+.watch-specs {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2C2C2C; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.watch-specs h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #F0F0F0;
+}
+
+.watch-specs p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #E0E0E0;
+}
+strong {
+    color: #004494;
+}
+
+ .titulo-iphone16 {
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.titulo-mac{
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.titulo-watch {
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h4{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    color: #004494;
+}
+
+.descripcion-final {
+    background: #333; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 2px solid #0056A0; 
+}
+
+.descripcion-final p {
+    font-size: 1.2em;
+    color: #E0E0E0;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.descripcion-final p::after {
+    content: "🔍"; 
+    display: block;
+    font-size: 2em;
+    color: #0056A0; 
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.descripcion-final p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ACA TERMINA EL MAIN */
+
+/* SEPARACION FOOTER */
+
+footer {
+    padding: 40px;
+    background-color: #1C1C1C;
+    color: #E0E0E0;
+    text-align: center;
+}
+
+.presentacion {
+    background-color: #3A3A3A;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto1 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    float: left;
+}
+
+.presentacion p {
+    margin-top: 0;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #E0E0E0;
+}
+
+.contactos ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contactos ul li {
+    margin: 10px 20px;
+    font-size: 1.1em;
+    color: #E0E0E0;
+}
+
+main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* ACA TERMINA EL FOOTER */
+
+/* Estilos para Samsung Galaxy S8+ */
+
+@media screen and (max-width: 360px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .search-label {
+        font-size: 0.9em;
+        padding-left: 25%;
+    }
+
+    .search-bar input {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .main-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav ul li {
+        margin: 15px 0;
+        padding-left: 140%;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .register-btn, .login-btn {
+        width: 100%;
+        margin: 10px 5px;
+    }
+
+    .nav-divider {
+        width: 100%;
+        height: 3px;
+        background: #0056A0;
+        margin: 20px auto;
+        position: relative;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        margin-top: 25px;
+    }
+    .grid-container {
+        display: block; 
+        margin: 0 auto;
+    }
+
+    .grid-item {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .mac-section .grid-container-mac {
+        display: block;
+    }
+
+    .mac-section .grid-mac {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+    .watch-section .grid-container-watch {
+        display: block; 
+    }
+
+    .watch-section .grid-watch {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+}
+
